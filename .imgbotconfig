@@ -1,6 +1,18 @@
+# Compress Wiki
+
+If your repository has a wiki with images, you can opt in to optimize these images as well as your code repo.
+
+By adding `compressWiki` in the `.imgbotconfig` file as displayed below, you will enable this feature.
+
+```
 {
+    "schedule": "daily", // daily|weekly|monthly
     "ignoredFiles": [
-    	"Test/*"
+        "*.jpg",                   // ignore by extension
+        "image1.png",              // ignore by filename
+        "public/special_images/*", // ignore by folderpath
     ],
-    "aggressiveCompression": false
+    "aggressiveCompression": "true" // true|false
+    "compressWiki": "true" // true|false
 }
+```
