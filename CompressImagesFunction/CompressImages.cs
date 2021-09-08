@@ -92,8 +92,15 @@ namespace CompressImagesFunction
 
             try
             {
-                // see if .imgbotconfig exists in repo root
-                var repoConfigJson = File.ReadAllText(parameters.LocalPath + Path.DirectorySeparatorChar + ".imgbotconfig");
+                // see if .imgbotconfig or .imgbotconfig.json exists in repo root
+                var repoConfigJsonFileName = ".imgbotconfig";
+                var repoConfigJsonDirName = parameters.LocalPath + Path.DirectorySeparatorChar;
+                if (!File.Exists(repoConfigJsonDirName + repoConfigJsonFileName))
+                {
+                    repoConfigJsonFileName = ".imgbotconfig.json";
+                }
+
+                var repoConfigJson = File.ReadAllText(repoConfigJsonDirName + repoConfigJsonFileName);
                 if (!string.IsNullOrEmpty(repoConfigJson))
                 {
                     repoConfiguration = JsonConvert.DeserializeObject<RepoConfiguration>(repoConfigJson);
