@@ -61,21 +61,17 @@ namespace OpenPrFunction
             sb.AppendLine("---");
             sb.AppendLine();
 
-            sb.Append("**Black Lives Matter** | ");
-            sb.Append("[💰 donate](https://blm-bookmarks.carrd.co/#donate) | ");
-            sb.Append("[🎓 learn](https://blm-bookmarks.carrd.co/#learn) | ");
-            sb.Append("[✍🏾 sign](https://blm-bookmarks.carrd.co/#sign)");
-            sb.AppendLine();
-            sb.AppendLine();
-
             sb.Append("[📝 docs](https://imgbot.net/docs) | ");
             sb.Append("[:octocat: repo](https://github.com/dabutvin/ImgBot) | ");
             sb.Append("[🙋🏾 issues](https://github.com/dabutvin/ImgBot/issues) | ");
-            sb.Append("[🏅 swag](https://goo.gl/forms/1GX7wlhGEX8nkhGO2) | ");
             sb.Append("[🏪 marketplace](https://github.com/marketplace/imgbot)");
 
             sb.AppendLine();
-
+            sb.AppendLine();
+            sb.Append("<i>");
+            sb.Append("~Imgbot - Part of [Optimole](https://optimole.com/) family");
+            sb.Append("</i>");
+            sb.AppendLine();
             return sb.ToString();
         }
     }

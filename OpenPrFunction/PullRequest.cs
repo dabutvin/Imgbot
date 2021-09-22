@@ -38,7 +38,7 @@ namespace OpenPrFunction
                 // get PR number
                 var allPrs = await githubClient.PullRequest.GetAllForRepository(parameters.RepoOwner, parameters.RepoName);
 
-                var pr = allPrs.First(p => p.State == ItemState.Open && p.Head.Sha == commit.Sha);
+                var pr = allPrs.FirstOrDefault(p => p.State == ItemState.Open && p.Head.Sha == commit.Sha);
 
                 if (pr == null)
                 {
