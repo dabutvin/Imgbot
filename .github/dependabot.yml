@@ -3,21 +3,17 @@ updates:
 - package-ecosystem: nuget
   directory: "/"
   schedule:
-    interval: daily
-    time: "13:00"
+    interval: weekly
 - package-ecosystem: npm
   directory: "/Tools"
   directory: "/Web"
   schedule:
-    interval: daily
-    time: "13:00"
+    interval: weekly
 - package-ecosystem: docker
   directory: "/"
   schedule:
-    interval: daily
-    time: "13:00"
+    interval: weekly
 - package-ecosystem: "github-actions"
   directory: "/"
   schedule:
-    interval: daily
-    time: "13:00"
+    interval: weekly
