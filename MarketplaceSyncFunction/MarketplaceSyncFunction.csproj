@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Octokit" Version="0.50.0" />
-    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="4.4.0" />
+    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="4.4.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
