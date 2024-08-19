@@ -12,7 +12,7 @@
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.25.2",
-    "@vue/compiler-sfc": "^3.4.34",
+    "@vue/compiler-sfc": "^3.4.38",
     "autoprefixer": "^10.4.20",
     "axios": "^1.7.4",
     "babel-loader": "^9.1.3",
