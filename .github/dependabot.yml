@@ -4,16 +4,40 @@ updates:
   directory: "/"
   schedule:
     interval: weekly
+  labels:
+    - enhancement
+  groups:
+    nuget:
+      patterns:
+        - "*"
 - package-ecosystem: npm
   directory: "/Tools"
   directory: "/Web"
   schedule:
     interval: weekly
+  labels:
+    - enhancement
+  groups:
+    npm:
+      patterns:
+        - "*"
 - package-ecosystem: docker
   directory: "/"
   schedule:
     interval: weekly
+  labels:
+    - enhancement
+  groups:
+    docker:
+      patterns:
+        - "*"
 - package-ecosystem: "github-actions"
   directory: "/"
   schedule:
     interval: weekly
+  labels:
+    - enhancement
+  groups:
+    actions:
+      patterns:
+        - "*"
