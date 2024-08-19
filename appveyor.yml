@@ -1,21 +1,22 @@
+---
 version: 1.0.{build}
 image: Visual Studio 2017
 pull_requests:
   do_not_increment_build_number: true
 branches:
   only:
-  - master
+    - master
 before_build:
-- nuget restore
+  - nuget restore
 configuration: Release
 build_script:
-- sh: msbuild "C:\projects\imgbot\ImgBot.sln" /verbosity:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll" || msbuild || dotnet build
-- cmd: set PATH=C:\msys64\usr\bin;C:\msys64\mingw64\bin;%PATH%
-- cmd: appveyor DownloadFile "https://raw.githubusercontent.com/swig/cccl/master/cccl"
-- cmd: call "%VS140COMNTOOLS%\..\..\VC\vcvarsall.bat" %PLATFORM%
-- cmd: bash -cvx "if test -x \"$(which appveyor-retry 2>/dev/null)\" && test -x \"$(which pacman)\" && test -n \"$(ls m*.db*)\"; then (appveyor-retry pacman -Syuu --needed --noconfirm --noprogressbar --ask=127) && (appveyor-retry pacman -S --noconfirm mono-msbuild); fi"
-- cmd: bash -cvx "if test -x \"$(which vcpkg)\"; then (vcpkg update && vcpkg upgrade && (vcpkg install vcpkg-msbuild || vcpkg install vcpkg-tool-mozbuild || vcpkg install vcpkg-tool-lessmsi || vcpkg install vcpkg-tool-meson || vcpkg install msgpack || vcpkg install nethost)); fi"
-- cmd: bash -cvx "if test -x \"$(which choco)\"; then (choco update || choco upgrade); (choco install msbuild-structured-log-viewer || choco install --pre msbuild-structured-log-viewer); (choco install msbuild.communitytasks || choco install --pre msbuild.communitytasks); (choco install msbuild.extensionpack || choco install --pre msbuild.extensionpack); (choco install msbuilddumper || choco install --pre msbuilddumper); (choco install microsoft-build-tools || choco install --pre microsoft-build-tools); (choco install invokemsbuild || choco install --pre invokemsbuild); (choco install bcc-msbuildlog || choco install --pre bcc-msbuildlog); fi"
-- cmd: bash -cvx "if test -x \"$(which winget 2>/dev/null)\"; then winget install -e --id KirillOsenkov.MSBuildStructuredLogViewer; winget install -e --id LoreSoft.MSBuildCommunityTasks; fi"
-- cmd: bash -cvx "if test -x \"$(which scoop 2>/dev/null)\"; then (scoop bucket add extras && scoop install extras/msbuild-structured-log-viewer); fi
-- cmd: bash -cvx "msbuild \"C:\projects\imgbot\ImgBot.sln\" /verbosity:minimal /logger:\"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll\" || msbuild || dotnet build || dotnet msbuild || dotnet test || dotnet vstest ImgBot.sln || ls -R"
+  - sh: msbuild "C:\projects\imgbot\ImgBot.sln" /verbosity:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll" || msbuild || dotnet build
+  - cmd: set PATH=C:\msys64\usr\bin;C:\msys64\mingw64\bin;%PATH%
+  - cmd: appveyor DownloadFile "https://raw.githubusercontent.com/swig/cccl/master/cccl"
+  - cmd: call "%VS140COMNTOOLS%\..\..\VC\vcvarsall.bat" %PLATFORM%
+  - cmd: bash -cvx "if test -x \"$(which appveyor-retry 2>/dev/null)\" && test -x \"$(which pacman)\" && test -n \"$(ls m*.db*)\"; then (appveyor-retry pacman -Syuu --needed --noconfirm --noprogressbar --ask=127) && (appveyor-retry pacman -S --noconfirm mono-msbuild); fi"
+  - cmd: bash -cvx "if test -x \"$(which vcpkg)\"; then (vcpkg update && vcpkg upgrade && (vcpkg install vcpkg-msbuild || vcpkg install vcpkg-tool-mozbuild || vcpkg install vcpkg-tool-lessmsi || vcpkg install vcpkg-tool-meson || vcpkg install msgpack || vcpkg install nethost)); fi"
+  - cmd: bash -cvx "if test -x \"$(which choco)\"; then (choco update || choco upgrade); (choco install msbuild-structured-log-viewer || choco install --pre msbuild-structured-log-viewer); (choco install msbuild.communitytasks || choco install --pre msbuild.communitytasks); (choco install msbuild.extensionpack || choco install --pre msbuild.extensionpack); (choco install msbuilddumper || choco install --pre msbuilddumper); (choco install microsoft-build-tools || choco install --pre microsoft-build-tools); (choco install invokemsbuild || choco install --pre invokemsbuild); (choco install bcc-msbuildlog || choco install --pre bcc-msbuildlog); fi"
+  - cmd: bash -cvx "if test -x \"$(which winget 2>/dev/null)\"; then winget install -e --id KirillOsenkov.MSBuildStructuredLogViewer; winget install -e --id LoreSoft.MSBuildCommunityTasks; fi"
+  - cmd: bash -cvx "if test -x \"$(which scoop 2>/dev/null)\"; then (scoop bucket add extras && scoop install extras/msbuild-structured-log-viewer); fi
+  - cmd: bash -cvx "msbuild \"C:\projects\imgbot\ImgBot.sln\" /verbosity:minimal /logger:\"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll\" || msbuild || dotnet build || dotnet msbuild || dotnet test || dotnet vstest ImgBot.sln || ls -R"
