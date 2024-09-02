@@ -14,7 +14,7 @@
     "@babel/core": "^7.25.2",
     "@vue/compiler-sfc": "^3.4.38",
     "autoprefixer": "^10.4.20",
-    "axios": "^1.7.5",
+    "axios": "^1.7.7",
     "babel-loader": "^9.1.3",
     "babel-preset-es2015": "^6.24.1",
     "bootstrap": "^5.3.3",
