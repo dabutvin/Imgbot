@@ -29,7 +29,7 @@
     "grunt-devserver": "^0.6.0",
     "grunt-markdown": "github:dabutvin/grunt-markdown#marked",
     "grunt-postcss": "^0.9.0",
-    "grunt-webpack": "^4.0.3",
+    "grunt-webpack": "^7.0.0",
     "jquery": "^3.6.0",
     "lodash": "^4.17.21",
     "marked": "^2.1.3",
